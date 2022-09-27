@@ -1,0 +1,7 @@
+{
+  "name": "malaga",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
