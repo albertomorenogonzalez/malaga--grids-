@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 interface Player {
-  dorsal: number;
-  name: string;
+  dorsal:number;
+  name:string;
 }
 
 @Component({
@@ -12,13 +12,23 @@ interface Player {
 })
 export class HomePage {
 
-  name: string;
-  dorsal: number;
-  team: Player[]=[];
+  name:string;
+  dorsal:number;
+  team:Player[]=[];
 
   constructor() {}
 
-  addPlayer() {
-    
+  addPlayer(n:string, d:number) {
+    this.team.push({dorsal:d,name:n});
+    this.name="";
+    this.dorsal=null;
+  }
+
+  removePlayer(d:number){
+    var index = this.team.findIndex((p=>p.dorsal==d));
+
+    if(index>=0){
+      this.team.splice(index,1);
+    }
   }
 }
