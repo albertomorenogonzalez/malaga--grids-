@@ -29,13 +29,17 @@
     <ion-text color="warning" *ngIf="team.length==0">Aún no hay jugadores introducidos</ion-text>
   </div>
 
-  <ion-card *ngFor="let player of team">
-    <ion-card-header>
-      <ion-card-title>{{player.name}}</ion-card-title>
-      <ion-card-title>{{player.dorsal}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-button (click)="removePlayer(player.dorsal)">Borrar</ion-button>
-    </ion-card-content>
-  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-card *ngFor="let player of team" size="12" size-md="4">
+        <ion-card-header>
+          <ion-card-title>Nombre: {{player.name}}</ion-card-title>
+          <ion-card-title>Dorsal: {{player.dorsal}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button (click)="removePlayer(player.dorsal)">Borrar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
 </ion-content>
